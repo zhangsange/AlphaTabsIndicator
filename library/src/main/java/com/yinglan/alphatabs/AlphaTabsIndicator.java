@@ -145,6 +145,9 @@ public class AlphaTabsIndicator extends LinearLayout {
             resetState();
             mTabViews.get(position).setIconAlpha(1.0f);
             mCurrentItem = position;
+            if (null != mListner) {
+                mListner.onTabSelected(mCurrentItem);
+            }
         }
     }
 
